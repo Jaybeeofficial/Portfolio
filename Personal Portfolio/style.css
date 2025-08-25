@@ -152,23 +152,10 @@ p{
 .about-img {
       width: 300px;
       height: auto;
-      clip-path: url(#blobClip);
       border-radius: 10px;
       object-fit: cover;
     }
-    .dot1{
-      width: 20px;
-      height: 20px;
-      top: -10px;
-      left: 20%;
-    }
-
-    .dot2{
-      width: 12px;
-      height: 12px;
-      bottom: -15px;
-      left: 70%;
-    }
+    
 
 
     .about-section {
