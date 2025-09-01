@@ -16,6 +16,13 @@ function loadPage(page) {
 
 
 
+    // Hide preloader after page loads
+  window.addEventListener("load", function () {
+    document.getElementById("preloader").style.display = "none";
+  });
+
+
+
 ScrollReveal().reveal('.scroll-reveal', {
     duration: 1000,         // Animation duration: 1s
     delay: 500,            // Delay before animation starts: 1s
