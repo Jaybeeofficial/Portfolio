@@ -147,6 +147,64 @@ h1, h3 {
 
 }
 
+/* Circle wrapper */
+.circle-wrapper {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff4d4d, #660000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: rotateCircle 20s linear infinite;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.5); /* glow effect */
+}
+
+.profile-img {
+  width: 75%;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Desktop adjustments */
+@media (min-width: 992px) {
+  .col-md-6.d-flex.justify-content-center.justify-content-md-start.align-items-center {
+    justify-content: flex-start; /* push image to left */
+    padding-left: 80px;          /* space from edge */
+  }
+
+  .circle-wrapper {
+    width: 420px;
+    height: 420px;
+  }
+
+  .profile-img {
+    width: 85%;
+  }
+}
+
+@keyframes rotateCircle {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Add spacing under navbar on small screens */
+@media (max-width: 768px) {
+  .home-section {
+    padding-top: 120px; /* push image down */
+  }
+
+  .image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* extra breathing space */
+  }
+}
+
+
 
 p{
     font-family: "Ubuntu", sans-serif !important;
@@ -185,12 +243,46 @@ p{
     color: #c53d3d !important;
 }
 
-.about-img {
-      width: 300px;
-      height: auto;
-      border-radius: 10px;
-      object-fit: cover;
-    }
+/* About Section Image Styling with Rotating Border */
+.about-section .about-img {
+  display: block;
+  width: 65%;
+  max-width: 320px;
+  margin: 0 auto; /* Center on small screens */
+  border-radius: 15px; /* Soft rounded corners */
+  object-fit: cover;
+  padding: 6px; /* Space for the animated border */
+  background: conic-gradient(from 0deg, #ff4d4d, #660000, #ff4d4d); /* Gradient circle */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: rotateBorder 6s linear infinite; /* Slow rotation */
+}
+
+/* Hover effect */
+.about-section .about-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Rotation Keyframes */
+@keyframes rotateBorder {
+  from {
+    background: conic-gradient(from 0deg, #ff4d4d, #660000, #ff4d4d);
+  }
+  to {
+    background: conic-gradient(from 360deg, #ff4d4d, #660000, #ff4d4d);
+  }
+}
+
+/* Desktop adjustments */
+@media (min-width: 992px) {
+  .about-section .about-img {
+    margin-left: auto;
+    margin-right: 0;
+    width: 85%; /* Bigger on desktop */
+  }
+}
+
     
 
 
